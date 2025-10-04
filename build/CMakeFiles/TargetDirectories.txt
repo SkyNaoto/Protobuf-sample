@@ -1,0 +1,3 @@
+/Users/naoto/All_Data/Study/Protobuf-sample/build/CMakeFiles/menu_app.dir
+/Users/naoto/All_Data/Study/Protobuf-sample/build/CMakeFiles/edit_cache.dir
+/Users/naoto/All_Data/Study/Protobuf-sample/build/CMakeFiles/rebuild_cache.dir

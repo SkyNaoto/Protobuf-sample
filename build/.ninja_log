@@ -1,0 +1,13 @@
+# ninja log v6
+1	73	1759538019316694166	menu.pb.h	d371dd0e8a54ae62
+1	73	1759538019316694166	menu.pb.cc	d371dd0e8a54ae62
+1	73	1759538019316694166	/Users/naoto/All_Data/Study/Protobuf-sample/build/menu.pb.h	d371dd0e8a54ae62
+1	73	1759538019316694166	/Users/naoto/All_Data/Study/Protobuf-sample/build/menu.pb.cc	d371dd0e8a54ae62
+74	1402	1759538019317907582	CMakeFiles/menu_app.dir/menu.pb.cc.o	4448b7f6c64db7b8
+10	73	1759539051772807414	menu.pb.h	d371dd0e8a54ae62
+10	73	1759539051772807414	menu.pb.cc	d371dd0e8a54ae62
+10	73	1759539051772807414	/Users/naoto/All_Data/Study/Protobuf-sample/build/menu.pb.h	d371dd0e8a54ae62
+10	73	1759539051772807414	/Users/naoto/All_Data/Study/Protobuf-sample/build/menu.pb.cc	d371dd0e8a54ae62
+73	1177	1759539051773833998	CMakeFiles/menu_app.dir/main.cpp.o	b911a3efd9236bd
+73	1184	1759539051774113039	CMakeFiles/menu_app.dir/menu.pb.cc.o	4448b7f6c64db7b8
+1184	1299	1759539052884748507	menu_app	97f2dc9b6e0726ef

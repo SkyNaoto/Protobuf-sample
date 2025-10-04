@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message item {
+    string message_text = 1;
+    string  message_id = 2;
+    int32 chiled_id = 3;
+    string data_id = 4;
+}
+
+message MenuTree {
+    string language = 1;
+    int32 parent_id = 2;
+    bool status = 3;
+    repeated item items = 4; // 複数itemを格納できる
+}
+
