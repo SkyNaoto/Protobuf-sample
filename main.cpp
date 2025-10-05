@@ -18,15 +18,19 @@ int main() {
     item1->set_data_id("LCAN_FF40");
 
     item* item2 = menutree.add_items();
-    item1->set_message_text("HVAC");
-    item1->set_message_id("Message_2000");
-    item1->set_chiled_id(2051);
-    item1->set_data_id("LCAN_FF50");
+    item2->set_message_text("HVAC");
+    item2->set_message_id("Message_2000");
+    item2->set_chiled_id(2051);
+    item2->set_data_id("LCAN_FF50");
 
-
+    std::cout << "シリアライズ"<< std::endl;
     std::cout << "Parent ID: " << menutree.parent_id() << std::endl;
     for (const auto& item : menutree.items()) {
-        std::cout << "  Item: " << item.message_text() << " (" << item.message_id() << ")" << std::endl;
+        std::cout << "  Text: " << item.message_text()
+                  << "  (mesageID = " << item.message_id()
+                  << " , chiled_id = " << item.chiled_id()
+                  << " , data_id = " << item.data_id()        
+                << ")" << std::endl;
     }
 
     // シリアライズ（バイナリ保存）
@@ -49,12 +53,13 @@ int main() {
     }
 
     // 結果表示
+    std::cout << "デシリアライズ"<< std::endl;
     std::cout << "Parent ID: " << menutree2.parent_id() << std::endl;
     for (const auto& item : menutree2.items()) {
         std::cout << "  Text: " << item.message_text()
-                  << " (messageID=" << item.message_id()
-                  << ", chiled_id=" << item.chiled_id()
-                  << ", data_id=" << item.data_id()
+                  << " (messageID = " << item.message_id()
+                  << ", chiled_id = " << item.chiled_id()
+                  << ", data_id = " << item.data_id()
                   << ")" << std::endl;
     }
 
