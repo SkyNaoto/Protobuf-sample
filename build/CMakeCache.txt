@@ -128,7 +128,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=ProtobufSocket
+CMAKE_PROJECT_NAME:STATIC=MenuTreeProtobufSocket
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -196,13 +196,13 @@ CMAKE_TAPI:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/tapi
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
-ProtobufSocket_BINARY_DIR:STATIC=/Users/naoto/All_Data/Study/Protobuf-sample/build
+MenuTreeProtobufSocket_BINARY_DIR:STATIC=/Users/naoto/All_Data/Study/Protobuf-sample/build
 
 //Value Computed by CMake
-ProtobufSocket_IS_TOP_LEVEL:STATIC=ON
+MenuTreeProtobufSocket_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-ProtobufSocket_SOURCE_DIR:STATIC=/Users/naoto/All_Data/Study/Protobuf-sample
+MenuTreeProtobufSocket_SOURCE_DIR:STATIC=/Users/naoto/All_Data/Study/Protobuf-sample
 
 //Path to a file.
 Protobuf_INCLUDE_DIR:PATH=/opt/homebrew/include
