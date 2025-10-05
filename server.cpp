@@ -56,7 +56,7 @@ int main() {
         std::cout << "-----------------------------" << std::endl;
     
     }
-
+    std::cout << "❌ Client disconnected." << std::endl;
 
     close(client_socket);
     close(server_fd);
