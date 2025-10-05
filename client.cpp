@@ -43,7 +43,27 @@ int main() {
     // サーバーに接続
     connect(sock, (struct sockaddr*)&serv_addr, sizeof(serv_addr));
 
-     // メッセージ送信
+     // 3改メッセージ送信
+     for (int i = 0; i < 3; ++i) {
+        // データ作成
+        MenuTree menutree;
+        menutree.set_language("Japanese");
+        menutree.set_parent_id(1001);
+        menutree.set_status(true);
+
+        item* item = menutree.add_items();
+        item->set_message_text("Gauge_"+ std::to_string(i));
+        item->set_message_id("Message_"+ std::to_string(1000+i));
+        item->set_chiled_id(1051+i);
+        item->set_data_id("LCAN_FF40_" + std::to_string(i));
+        // メッセージ送信
+        SendProtobuf(sock, menutree);
+        std::cout << "📤 MenuTree message " << i+1 << " sent" << std::endl;
+        sleep(1); // 1秒待機
+     }
+
+     std::cout << " All MenuTree messages sent. Closing connetion." << std::endl;
+
     SendProtobuf(sock, menutree);
 
     close(sock);

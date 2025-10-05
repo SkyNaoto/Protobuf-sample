@@ -36,9 +36,11 @@ int main() {
     // クライアントからの接続を受け入れる
     int client_socket = accept(server_fd, (struct sockaddr*)&address, (socklen_t*)&addrlen);
 
-    MenuTree menutree;
-    // menutreeにデータを受信
-    if (ReceiveProtobuf(client_socket, menutree)) {
+    while(true){
+        MenuTree menutree;
+        // menutreeにデータを受信
+        if (!ReceiveProtobuf(client_socket, menutree)) break;
+            
         std::cout << "✅ Message received successfully!" << std::endl;
         std::cout << "Language: " << menutree.language() << std::endl;
         std::cout << "Parent ID: " << menutree.parent_id() << std::endl;
@@ -46,12 +48,15 @@ int main() {
 
         for (const auto& i : menutree.items()) {
             std::cout << "  " << i.message_text()
-                      << " (" << i.message_id()
-                      << ", " << i.chiled_id()
-                      << ", " << i.data_id()
-                      << ")" << std::endl;
+                    << " (" << i.message_id()
+                    << ", " << i.chiled_id()
+                    << ", " << i.data_id()
+                    << ")" << std::endl;
         }
+        std::cout << "-----------------------------" << std::endl;
+    
     }
+
 
     close(client_socket);
     close(server_fd);
@@ -66,6 +71,8 @@ bool ReceiveProtobuf(int client_socket, google::protobuf::Message& message) {
     uint32_t msg_size;
     // 4バイトのメッセージサイズを先頭から受信 readはソケットからデータを読み込む関数 msg_sizeに読み込んだデータを格納
     int n = read(client_socket, &msg_size, sizeof(msg_size));
+    // 0バイト以下ならエラー
+    if (n <= 0) return false;
     // 4バイト読み込めなかった場合はエラー
     if (n != sizeof(msg_size)) {
         std::cerr << "Failed to read message size." << std::endl;
